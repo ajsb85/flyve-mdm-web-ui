@@ -55,7 +55,7 @@ export default class Login extends React.Component<any, any> {
                         </div>
                         <div className="m-col-8-12 section2">
                             <h2>Mobile Device Management</h2>
-                            <form onClick={this.LogInServer}>
+                            <form onSubmit={this.LogInServer}>
                                 <p>Email</p>
                                 <input type="text" name="email" value={this.state.email} onChange={this.ChangeInput} />
                                 <p>Password</p>
@@ -65,10 +65,8 @@ export default class Login extends React.Component<any, any> {
                                     value={this.state.password} 
                                     onChange={this.ChangeInput} 
                                 />
+                                <button className="win-button color-accent">LOGIN</button>
                                 <button className="win-button">SIGNUP</button>
-                                <button className="win-button color-accent">
-                                    LOGIN
-                                </button>
                             </form>
                         </div>
                     </div>

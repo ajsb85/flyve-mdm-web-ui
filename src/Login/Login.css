@@ -35,3 +35,6 @@
 .win-button {
     margin: 15px 5px;
 }  
+#LoginForm button {
+    float: right
+}
