@@ -1,5 +1,6 @@
 import * as React from 'react'
 import VerifyAccountActivation from '../Utils/VerifyAccountActivation'
+import Loading from '../GenericComponents/Loading'
 import './ContactBook.css'
 
 import HeaderContactBook from './HeaderContactBook'
@@ -14,16 +15,26 @@ export default class ContactBook extends React.Component<any, any> {
     constructor (props) {
         super(props)
         document.body.className = 'win-type-body color-white'
-        VerifyAccountActivation(this.props.history)
+        this.state = {
+            renderedComponent: <Loading />
+        }
     }
 
-    render () {
-        return (
-            <div style={{height: '100%'}}>
-                <HeaderContactBook />
-                <BodyContactBook history={this.props.history}/>
-            </div>
-        )
+    componentWillMount () {
+        VerifyAccountActivation(this.props.history)
+            .then((active) => {
+                if (active) {
+                    this.setState({renderedComponent: <div style={{height: '100%'}}>
+                                                          <HeaderContactBook />
+                                                          <BodyContactBook history={this.props.history}/>
+                                                      </div>
+                    })
+                } 
+            })
+    }
 
+
+    render () {
+        return this.state.renderedComponent
     }
 }
