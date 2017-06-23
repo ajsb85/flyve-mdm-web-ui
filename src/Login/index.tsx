@@ -12,9 +12,7 @@ export default class Login extends React.Component<any, any> {
 
     constructor (props) {
         super(props)
-
-        document.body.className = 'color-accent'
-
+        document.body.className = 'win-type-body color-accent'
         this.state = {
             email: '',
             password: ''

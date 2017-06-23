@@ -32,7 +32,7 @@ export default class PeoplePage extends React.Component<any, any> {
 
     handleToggleSelectionMode =  () => {
         this.setState({selectionMode: !this.state.selectionMode})
-        this.props.onNavigate(["people"])
+        this.props.onNavigate(['people'])
         // this.refs.listView.winControl.selection.clear()
     }
 
@@ -55,7 +55,7 @@ export default class PeoplePage extends React.Component<any, any> {
         let indices = this.state.selectedPeople
         indices.sort()
         indices.reverse()
-        indices.forEach(function (i) {
+        indices.forEach(function (i: number) {
             people.splice(i, 1)
         })
         this.setState({

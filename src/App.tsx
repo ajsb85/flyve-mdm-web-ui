@@ -10,7 +10,7 @@ export default class App extends React.Component<any, any> {
 
     constructor (props) {
         super(props)
-        document.body.className = 'color-white'
+        document.body.className = 'win-type-body color-white'
         console.log(this.props.history)
         VerifyAccountActivation(this.props.history, 'contactbook')
     }

@@ -13,7 +13,7 @@ export default class ContactBook extends React.Component<any, any> {
 
     constructor (props) {
         super(props)
-        document.body.className = 'color-white'
+        document.body.className = 'win-type-body color-white'
         VerifyAccountActivation(this.props.history)
     }
 
