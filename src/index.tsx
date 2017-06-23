@@ -6,6 +6,7 @@ import ContactBook from './ContactBook'
 import ValidateAccount from './Login/ValidateAccount'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import './App.css'
+import './Colors.css'
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
